@@ -6,17 +6,29 @@
 //  Copyright © 2020 XJH. All rights reserved.
 //
 
-#include <stdio.h>
-#include <string>
-#include <vector>
+#include "SimpleLexer.hpp"
 
-using namespace std;
+TokenType::TokenType SimpleToken::getType()
+{
+    return type;
+}
 
-class SimpleLexer {
-private:
-    string tokenText;
-    std::vector<string> tokens;
-    
-public:
-    
-};
+string SimpleToken::getText()
+{
+    return text;
+}
+
+bool SimpleLexer::isAlpha(int ch)
+{
+    return ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z';
+}
+
+bool SimpleLexer::isDigit(int ch)
+{
+    return ch >= '0' && ch <= '9';
+}
+
+bool SimpleLexer::isBlank(int ch)
+{
+    return ch == ' ' || ch == '\t' || ch == '\n';
+}

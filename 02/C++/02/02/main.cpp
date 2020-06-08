@@ -7,12 +7,12 @@
 //
 
 #include <iostream>
-#include "SimpleLexer.cpp"
+#include "SimpleLexer.hpp"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, World!\n";
-    SimpleLexer *s = new SimpleLexer();
-    std::cout << s<<endl;
+//    SimpleLexer *s = new SimpleLexer();
+//    std::cout << s<<endl;
     return 0;
 }

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6DD08FE4248DD5A0005A6E48 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6DD08FE3248DD5A0005A6E48 /* main.cpp */; };
-		6DD08FEB248DD7AA005A6E48 /* SimpleLexer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6DD08FEA248DD7AA005A6E48 /* SimpleLexer.cpp */; };
+		6DD08FF6248E5624005A6E48 /* SimpleLexer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6DD08FF4248E5624005A6E48 /* SimpleLexer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,7 +26,11 @@
 /* Begin PBXFileReference section */
 		6DD08FE0248DD5A0005A6E48 /* 02 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = 02; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DD08FE3248DD5A0005A6E48 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		6DD08FEA248DD7AA005A6E48 /* SimpleLexer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleLexer.cpp; sourceTree = "<group>"; };
+		6DD08FEF248DE264005A6E48 /* TokenType.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TokenType.hpp; sourceTree = "<group>"; };
+		6DD08FF4248E5624005A6E48 /* SimpleLexer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleLexer.cpp; sourceTree = "<group>"; };
+		6DD08FF5248E5624005A6E48 /* SimpleLexer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SimpleLexer.hpp; sourceTree = "<group>"; };
+		6DD08FF8248E5662005A6E48 /* Token.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Token.hpp; sourceTree = "<group>"; };
+		6DD08FFB248E58F9005A6E48 /* TokenReader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TokenReader.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +63,12 @@
 		6DD08FE2248DD5A0005A6E48 /* 02 */ = {
 			isa = PBXGroup;
 			children = (
+				6DD08FF5248E5624005A6E48 /* SimpleLexer.hpp */,
+				6DD08FF4248E5624005A6E48 /* SimpleLexer.cpp */,
 				6DD08FE3248DD5A0005A6E48 /* main.cpp */,
-				6DD08FEA248DD7AA005A6E48 /* SimpleLexer.cpp */,
+				6DD08FEF248DE264005A6E48 /* TokenType.hpp */,
+				6DD08FF8248E5662005A6E48 /* Token.hpp */,
+				6DD08FFB248E58F9005A6E48 /* TokenReader.hpp */,
 			);
 			path = 02;
 			sourceTree = "<group>";
@@ -122,7 +130,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DD08FEB248DD7AA005A6E48 /* SimpleLexer.cpp in Sources */,
+				6DD08FF6248E5624005A6E48 /* SimpleLexer.cpp in Sources */,
 				6DD08FE4248DD5A0005A6E48 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

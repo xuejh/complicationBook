@@ -11,9 +11,11 @@
 
 #include <stdio.h>
 #include <iostream>
+#include <string>
 #include <vector>
 #include "Token.hpp"
 #include "TokenType.hpp"
+#include "TokenReader.hpp"
 
 using namespace std;
 
@@ -69,8 +71,27 @@ private:
     string text;
     
 public:
-    TokenType::TokenType getType() override;
-    string getText() override;
+    TokenType::TokenType getType() ;
+    void setType(TokenType::TokenType mtype) ;
+    string getText() ;
+    void setText(string str) ;
+};
+
+
+class  SimpleTokenReader: TokenReader{
+private:
+    vector<Token> tokens;
+    int pos = 0;
+    
+    
+public:
+    SimpleTokenReader(vector<Token> mtokens);
+    SimpleTokenReader() = default;
+    Token read() override;
+    Token peek() override;
+    void unread() override;
+    int getPosition() override;
+    void setPosition(int position) override;
 };
 
 
@@ -81,12 +102,30 @@ public:
 class SimpleLexer {
 private:
     string tokenText;
-    vector<Token> tokens;
+    vector<SimpleToken> tokens;
     SimpleToken token;
     bool isAlpha(int ch);
     bool isDigit(int ch);
     bool isBlank(int ch);
+    /**
+        * 有限状态机进入初始状态。
+        * 这个初始状态其实并不做停留，它马上进入其他状态。
+        * 开始解析的时候，进入初始状态；某个Token解析完毕，也进入初始状态，在这里把Token记下来，然后建立一个新的Token。
+        * @param ch
+        * @return
+        */
+    DfaState initToken(int ch);
+    
+    
+    
 public:
+    /**
+    * 解析字符串，形成Token。
+    * 这是一个有限状态自动机，在不同的状态中迁移。
+    * @param code
+    * @return
+    */
+    SimpleTokenReader tokenize(string code);
     
 };
 

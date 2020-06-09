@@ -25,12 +25,14 @@ public:
         * Token的类型
         * @return TokenType
         */
-    virtual TokenType::TokenType getType() = 0;
+     TokenType::TokenType getType() ;
+     void setType(TokenType::TokenType mtype) ;
     /**
         * Token的文本值
         * @return string
         */
-    virtual string getText() = 0;
+     string getText() ;
+     void setText(string str);
 };
 
 #endif /* Token_hpp */

@@ -7,4 +7,9 @@ public enum TokenType {
 	    IntLiteral,     //整型字面量
 	    Int,    //Int
 	    Assignment,//=
+	    Plus,   // +
+	    Minus,  // -
+	    Star,   // *
+	    Slash,  // /
+	    
 }

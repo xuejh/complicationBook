@@ -5,6 +5,8 @@ import java.util.List;
 
 
 
+
+
 public class Lexer {
 	
 	private StringBuffer tokenText = null; //临时存储tokenText
@@ -46,7 +48,23 @@ public class Lexer {
             newState = DfaState.Assignment;
             token.type = TokenType.Assignment;
             tokenText.append(ch);
-        }else {
+        }else if (ch == '+') {
+            newState = DfaState.Plus;
+            token.type = TokenType.Plus;
+            tokenText.append(ch);
+        } else if (ch == '-') {
+            newState = DfaState.Minus;
+            token.type = TokenType.Minus;
+            tokenText.append(ch);
+        } else if (ch == '*') {
+            newState = DfaState.Star;
+            token.type = TokenType.Star;
+            tokenText.append(ch);
+        } else if (ch == '/') {
+            newState = DfaState.Slash;
+            token.type = TokenType.Slash;
+            tokenText.append(ch);
+        } else {
 	        newState = DfaState.Initial; // skip all unknown patterns
 	    }
 	    return newState;
@@ -124,6 +142,10 @@ public class Lexer {
 	                break;
 	    		case GE:
 	    		case Assignment:
+	    		case Plus:
+                case Minus:
+                case Star:
+                case Slash:
 	    			state = initToken(ch);      //退出GE状态，并保存Token
 	    			break;
 	    		case IntLiteral:

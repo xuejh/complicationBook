@@ -9,4 +9,8 @@ public enum DfaState {
     IntLiteral, //数字字面量
     Int, Id_int1, Id_int2, Id_int3,//Int
     Assignment,//=
+    Plus,//+
+    Minus,//-
+    Star,//*
+    Slash,///
 }

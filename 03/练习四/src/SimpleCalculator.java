@@ -11,7 +11,7 @@ public class SimpleCalculator {
         SimpleCalculator calculator = new SimpleCalculator();
 
         //测试变量声明语句的解析
-        String script = "2+3*5";
+        String script = "2+3+5+6";
         System.out.println("\n计算: " + script + "，看上去一切正常。");
         calculator.evaluate(script);
 
@@ -170,6 +170,8 @@ public class SimpleCalculator {
 	                    node = new SimpleASTNode(ASTNodeType.Additive, token.getText());
 	                    node.addChild(child1);
 	                    node.addChild(child2);
+	                    
+	                    
 	                } else {
 	                    throw new Exception("invalid additive expression, expecting the right part.");
 	                }

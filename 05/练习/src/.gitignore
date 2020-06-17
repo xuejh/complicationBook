@@ -1,0 +1,14 @@
+/ASTNode.class
+/ASTNodeType.class
+/SimpleCalculator$SimpleASTNode.class
+/SimpleCalculator.class
+/SimpleLexer$DfaState.class
+/SimpleLexer$SimpleToken.class
+/SimpleLexer$SimpleTokenReader.class
+/SimpleLexer.class
+/SimpleParser$SimpleASTNode.class
+/SimpleParser.class
+/SimpleScript.class
+/Token.class
+/TokenReader.class
+/TokenType.class
